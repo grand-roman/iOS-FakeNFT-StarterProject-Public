@@ -62,17 +62,28 @@ final class CartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
+        viewModel.showAlert = { [weak self] message in
+            DispatchQueue.main.async {
+                let alert = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
+                let alertAction = UIAlertAction(title: "Повторить", style: .default) { [weak self] _ in
+                    self?.bindViewModel()
+                }
+                alert.addAction(alertAction)
+                self?.present(alert, animated: true)
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.viewDidLoad { [weak self] in
-            self?.setupView()
             self?.configureTableView()
             self?.cartTableView.reloadData()
             self?.updatePurchaseView()
         }
+        setupView()
     }
+    
     private func configureSorting() {
         let alertSheet = UIAlertController(title: nil, message: "Сортировка", preferredStyle: .actionSheet)
         let sortByPrice = UIAlertAction(title: "По цене", style: .default) { _ in
@@ -132,7 +143,17 @@ final class CartViewController: UIViewController {
         }
     }
     
-   private func updatePurchaseView() {
+    private func presentPurachaseVC() {
+        let manager = CurrencyManager(networkClient: DefaultNetworkClient())
+        let viewModel = CurrencyViewModel(model: manager, cartViewModel: viewModel)
+        let purchaseVC = CartPurchaseViewController(viewModel: viewModel)
+        purchaseVC.hidesBottomBarWhenPushed = true
+        let navigationController = UINavigationController(rootViewController: purchaseVC)
+        navigationController.modalPresentationStyle = .fullScreen
+        present(navigationController, animated: true)
+    }
+    
+    private func updatePurchaseView() {
         let cartCount = viewModel.cartModels.count
         purchaseView.setNftCount(text: "\(cartCount) NFT")
         let sum = viewModel.cartModels.reduce(0.0) { (result, nft) in
@@ -141,6 +162,7 @@ final class CartViewController: UIViewController {
         let formattedPrice = String(format: "%.2f", sum)
         purchaseView.setSumNft(text: "\(formattedPrice) ETH")
     }
+    
     private func setupFilledView() {
         configureTableView()
         purchaseView.delegate = self
@@ -163,6 +185,7 @@ final class CartViewController: UIViewController {
             deleteView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
+    
     private func setupEmptyView() {
         view.addSubview(placeholderLabel)
         NSLayoutConstraint.activate([
@@ -202,13 +225,10 @@ extension CartViewController: UITableViewDataSource {
 
 extension CartViewController: CartViewDelegate {
     func didTapPurchaseButton() {
-        let purchaseVC = CartPurchaseViewController()
-        purchaseVC.hidesBottomBarWhenPushed = true
-        let navigationController = UINavigationController(rootViewController: purchaseVC)
-        navigationController.modalPresentationStyle = .fullScreen
-        present(navigationController, animated: true)
+        presentPurachaseVC()
     }
 }
+
 extension CartViewController: CartCellDelegate {
     func didTapDeleteButton(at index: Int) {
         deleteView.isHidden = false
