@@ -28,6 +28,11 @@
 		3FC8C39129D2453B0081F015 /* ExampleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC8C39029D2453B0081F015 /* ExampleRequest.swift */; };
 		3FC8C39329D246BA0081F015 /* DateFormatters+Presets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC8C39229D246BA0081F015 /* DateFormatters+Presets.swift */; };
 		3FC8C39729D24D9D0081F015 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3FC8C39629D24D9D0081F015 /* .swiftlint.yml */; };
+		A01A3DD82AD98A7500596241 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01A3DD72AD98A7500596241 /* Images.swift */; };
+		A01A3DDA2AD98A7900596241 /* Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01A3DD92AD98A7900596241 /* Labels.swift */; };
+		A01A3DDD2AD98B2300596241 /* UIBlockingProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01A3DDC2AD98B2300596241 /* UIBlockingProgressHUD.swift */; };
+		A01A3DDF2AD98B2700596241 /* UIViewController+hideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01A3DDE2AD98B2700596241 /* UIViewController+hideKeyboard.swift */; };
+		A01A3DE22AD98B7100596241 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01A3DE12AD98B7100596241 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +76,14 @@
 		3FC8C39029D2453B0081F015 /* ExampleRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleRequest.swift; sourceTree = "<group>"; };
 		3FC8C39229D246BA0081F015 /* DateFormatters+Presets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatters+Presets.swift"; sourceTree = "<group>"; };
 		3FC8C39629D24D9D0081F015 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		A01A3DD42AD98A6600596241 /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
+		A01A3DD52AD98A6A00596241 /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
+		A01A3DD62AD98A6E00596241 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
+		A01A3DD72AD98A7500596241 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		A01A3DD92AD98A7900596241 /* Labels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Labels.swift; sourceTree = "<group>"; };
+		A01A3DDC2AD98B2300596241 /* UIBlockingProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBlockingProgressHUD.swift; sourceTree = "<group>"; };
+		A01A3DDE2AD98B2700596241 /* UIViewController+hideKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+hideKeyboard.swift"; sourceTree = "<group>"; };
+		A01A3DE12AD98B7100596241 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +116,11 @@
 		3F478ECD29DB473000F6D39E /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				A01A3DD32AD98A3E00596241 /* Fonts */,
 				3F478ECE29DB474E00F6D39E /* Colors.swift */,
 				3F478ED029DB476500F6D39E /* Fonts.swift */,
+				A01A3DD72AD98A7500596241 /* Images.swift */,
+				A01A3DD92AD98A7900596241 /* Labels.swift */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -133,6 +149,7 @@
 		3F68069529CBBAF100B4F915 /* FakeNFT */ = {
 			isa = PBXGroup;
 			children = (
+				A01A3DDB2AD98B0F00596241 /* Helpers */,
 				3F68069629CBBAF100B4F915 /* AppDelegate.swift */,
 				3F68069829CBBAF100B4F915 /* SceneDelegate.swift */,
 				3F478ECD29DB473000F6D39E /* DesignSystem */,
@@ -175,6 +192,7 @@
 		3F6806C729CBBC5B00B4F915 /* Scenes  */ = {
 			isa = PBXGroup;
 			children = (
+				A01A3DE02AD98B5C00596241 /* TabBar */,
 				3F6806C829CBBC8100B4F915 /* ProductDetails */,
 			);
 			path = "Scenes ";
@@ -231,6 +249,33 @@
 				3FC8C39029D2453B0081F015 /* ExampleRequest.swift */,
 			);
 			path = Requests;
+			sourceTree = "<group>";
+		};
+		A01A3DD32AD98A3E00596241 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A01A3DD42AD98A6600596241 /* SF-Pro-Text-Bold.otf */,
+				A01A3DD52AD98A6A00596241 /* SF-Pro-Text-Medium.otf */,
+				A01A3DD62AD98A6E00596241 /* SF-Pro-Text-Regular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		A01A3DDB2AD98B0F00596241 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A01A3DDC2AD98B2300596241 /* UIBlockingProgressHUD.swift */,
+				A01A3DDE2AD98B2700596241 /* UIViewController+hideKeyboard.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A01A3DE02AD98B5C00596241 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				A01A3DE12AD98B7100596241 /* TabBarController.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,13 +443,18 @@
 				3FC8C38B29D242E90081F015 /* ProductDetailsTableViewCell.swift in Sources */,
 				3F478ECF29DB474E00F6D39E /* Colors.swift in Sources */,
 				3F478ED129DB476500F6D39E /* Fonts.swift in Sources */,
+				A01A3DE22AD98B7100596241 /* TabBarController.swift in Sources */,
+				A01A3DDF2AD98B2700596241 /* UIViewController+hideKeyboard.swift in Sources */,
+				A01A3DDD2AD98B2300596241 /* UIBlockingProgressHUD.swift in Sources */,
 				3FC8C39329D246BA0081F015 /* DateFormatters+Presets.swift in Sources */,
 				3F68069B29CBBAF100B4F915 /* ProductDetailsTableViewController.swift in Sources */,
 				3F6806D529CBBEC700B4F915 /* NetworkTask.swift in Sources */,
 				3F68069729CBBAF100B4F915 /* AppDelegate.swift in Sources */,
+				A01A3DD82AD98A7500596241 /* Images.swift in Sources */,
 				3F68069929CBBAF100B4F915 /* SceneDelegate.swift in Sources */,
 				3FC8C39129D2453B0081F015 /* ExampleRequest.swift in Sources */,
 				3F6806D729CBC50A00B4F915 /* CellsReusingUtils.swift in Sources */,
+				A01A3DDA2AD98A7900596241 /* Labels.swift in Sources */,
 				3F6806D329CBBE9600B4F915 /* NetworkRequest.swift in Sources */,
 				3F6806CB29CBBCC700B4F915 /* ExampleNetworkModel.swift in Sources */,
 				3F6806D129CBBE6B00B4F915 /* NetworkClient.swift in Sources */,
