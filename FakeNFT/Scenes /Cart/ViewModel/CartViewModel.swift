@@ -28,10 +28,10 @@ final class CartViewModel: CartViewModelProtocol {
         self.model = model
     }
     func viewDidLoad(completion: @escaping () -> Void) {
-        UIBlockingProgressHUD.show()
+       // UIBlockingProgressHUD.show()
         model.fetchNFTs { nfts in
             DispatchQueue.main.async { [weak self] in
-                UIBlockingProgressHUD.dismiss()
+                //UIBlockingProgressHUD.dismiss()
                 switch nfts {
                 case .success(let models):
                     let viewModels = models.map(NFTCartModel.init(serverModel:))

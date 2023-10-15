@@ -22,4 +22,34 @@ extension String {
         static let website = NSLocalizedString("", value: "Сайт", comment: "")
         static let changePhoto = NSLocalizedString("", value: "Сменить фото", comment: "")
     }
+
+    enum ProfileNFTTableViewCell {
+        static let from = NSLocalizedString("", value: "от", comment: "")
+        static let price = NSLocalizedString("", value: "Цена", comment: "")
+        static let currency = NSLocalizedString("", value: " ETH", comment: "")
+    }
+
+    enum ProfileNFTSortAlert {
+        static let title = NSLocalizedString("", value: "Сортировка", comment: "")
+        static let byPrice = NSLocalizedString("", value: "По цене", comment: "")
+        static let byRating = NSLocalizedString("", value: "По рейтингу", comment: "")
+        static let byName = NSLocalizedString("", value: "По названию", comment: "")
+        static let cancel = NSLocalizedString("", value: "Закрыть", comment: "")
+    }
+
+    enum ProfileNFT {
+        static let placeholder = NSLocalizedString("", value: "У Вас ещё нет NFT", comment: "")
+    }
+
+    enum ProfileFavoriteNFT {
+        static let placeholder = NSLocalizedString("", value: "У Вас ещё нет избранных NFT", comment: "")
+    }
+
+    enum ProfileErrorAlert {
+        static let title = NSLocalizedString("", value: "Ошибка", comment: "")
+        static let loadMessage = NSLocalizedString("", value: "Не удалось загрузить данные(", comment: "")
+        static let updateMessage = NSLocalizedString("", value: "Не удалось обновить данные(", comment: "")
+        static let retry = NSLocalizedString("", value: "Повторить", comment: "")
+        static let cancel = NSLocalizedString("", value: "Отменить", comment: "")
+    }
 }
