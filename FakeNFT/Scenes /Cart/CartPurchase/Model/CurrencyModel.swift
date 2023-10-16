@@ -1,22 +1,9 @@
 import UIKit
 
-struct CurrencyServerModel: Decodable {
+struct CurrencyModel: Equatable {
     let id: String
     let title: String
     let name: String
-    let image: URL
-}
+    let image: UIImage
 
-struct CurrencyModel: Hashable {
-    let id: String
-    let title: String
-    let name: String
-    let image: URL
-    
-    init(serverModel: CurrencyServerModel) {
-        id = serverModel.id
-        title = serverModel.title
-        name = serverModel.name
-        image = serverModel.image
-    }
 }

@@ -73,7 +73,7 @@ final class ConfirmView: UIView {
     }
 
     @objc func confirmButtonTapped() {
-        delegate?.didTappedConfirmButton()
+        // TODO: Transition on confirm page
     }
     
     @objc func agreementLinkTapped() {
