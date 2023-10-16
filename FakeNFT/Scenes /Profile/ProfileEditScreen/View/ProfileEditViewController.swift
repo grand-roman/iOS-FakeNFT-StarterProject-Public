@@ -3,7 +3,8 @@ import UIKit
 final class ProfileEditViewController: UIViewController {
     var completionHandler: ((Profile) -> Void)?
 
-    private var viewModel: ProfileEditViewModelProtocol
+    private let viewModel: ProfileEditViewModelProtocol
+    private let alert: AlertProtocol
 
     private lazy var closeButton: UIButton = {
         let button = UIButton(type: .system)
@@ -70,6 +71,7 @@ final class ProfileEditViewController: UIViewController {
 
     init(_ viewModel: ProfileEditViewModelProtocol, _ image: UIImage?) {
         self.viewModel = viewModel
+        self.alert = Alert()
         super.init(nibName: nil, bundle: nil)
         self.profileImage.image = image
     }
@@ -81,9 +83,23 @@ final class ProfileEditViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+
+        viewModel.showAlertObservable.bind { [weak self] _ in
+            guard let self = self else { return }
+            self.alert.present(
+                title: .ProfileErrorAlert.title,
+                message: .ProfileErrorAlert.updateMessage,
+                actions: .cancel(handler: {
+                    self.dismiss(animated: true)
+                }), .retry(handler: {
+                    self.viewModel.changeProfile()
+                }),
+                from: self
+            )
+        }
+
         viewModel.profileObservable.bind { [weak self] profile in
             guard let self = self else { return }
-            self.showLoader(false)
             self.completionHandler?(profile)
             self.dismiss(animated: true)
         }
@@ -203,19 +219,9 @@ final class ProfileEditViewController: UIViewController {
                                     description: profileDescription.text,
                                     website: profileWebsite.text)
         if profile != viewModel.profileEdited {
-            showLoader(true)
             viewModel.setProfileEdited(profile)
         } else {
             dismiss(animated: true)
-        }
-    }
-
-    private func showLoader(_ isShow: Bool) {
-        switch isShow {
-        case true:
-            UIBlockingProgressHUD.show()
-        case false:
-            UIBlockingProgressHUD.dismiss()
         }
     }
 }

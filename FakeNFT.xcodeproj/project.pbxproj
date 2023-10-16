@@ -68,6 +68,7 @@
 		A01A3E442AD9D86E00596241 /* CartPurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01A3E432AD9D86E00596241 /* CartPurchaseViewController.swift */; };
 		A01A3E462AD9D87500596241 /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01A3E452AD9D87500596241 /* CurrencyModel.swift */; };
 		A01A3E482AD9D87C00596241 /* PurchaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01A3E472AD9D87C00596241 /* PurchaseCell.swift */; };
+		A0D860602ADDA49D00076ABB /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8605F2ADDA49D00076ABB /* Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +155,7 @@
 		A01A3E432AD9D86E00596241 /* CartPurchaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartPurchaseViewController.swift; sourceTree = "<group>"; };
 		A01A3E452AD9D87500596241 /* CurrencyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
 		A01A3E472AD9D87C00596241 /* PurchaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseCell.swift; sourceTree = "<group>"; };
+		A0D8605F2ADDA49D00076ABB /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -348,6 +350,7 @@
 			isa = PBXGroup;
 			children = (
 				A01A3DDC2AD98B2300596241 /* UIBlockingProgressHUD.swift */,
+				A0D8605F2ADDA49D00076ABB /* Alert.swift */,
 				A01A3DDE2AD98B2700596241 /* UIViewController+hideKeyboard.swift */,
 			);
 			path = Helpers;
@@ -744,6 +747,7 @@
 				A01A3E0C2AD98EF000596241 /* ProfileTableViewCell.swift in Sources */,
 				A01A3E482AD9D87C00596241 /* PurchaseCell.swift in Sources */,
 				A01A3E1F2AD9D2CE00596241 /* UserViewCellViewModel.swift in Sources */,
+				A0D860602ADDA49D00076ABB /* Alert.swift in Sources */,
 				A01A3E342AD9D7EF00596241 /* DeleteView.swift in Sources */,
 				3F478ED129DB476500F6D39E /* Fonts.swift in Sources */,
 				A01A3DFD2AD98E5700596241 /* ProfileEdited.swift in Sources */,
