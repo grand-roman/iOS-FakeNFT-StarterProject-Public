@@ -4,7 +4,6 @@ import SafariServices
 
 final class ProfileViewController: UIViewController {
     private let viewModel: ProfileViewModelProtocol
-    private let alert: AlertProtocol
 
     private lazy var editButton: UIBarButtonItem = {
         let button = UIButton(type: .system)
@@ -62,8 +61,6 @@ final class ProfileViewController: UIViewController {
         text.textContainer.lineFragmentPadding = 0
         text.textContainerInset = .zero
         text.dataDetectorTypes = .link
-        text.textContainer.maximumNumberOfLines = 1
-        text.textContainer.lineBreakMode = .byTruncatingTail
         text.delegate = self
         return text
     }()
@@ -80,7 +77,6 @@ final class ProfileViewController: UIViewController {
 
     init(viewModel: ProfileViewModelProtocol = ProfileViewModel()) {
         self.viewModel = viewModel
-        self.alert = Alert()
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -91,36 +87,18 @@ final class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-
-        viewModel.showAlertObservable.bind { [weak self] _ in
-            guard let self = self else { return }
-            self.alert.present(
-                title: .ProfileErrorAlert.title,
-                message: .ProfileErrorAlert.loadMessage,
-                actions: .cancel(handler: {
-                }),
-                .retry(handler: {
-                    self.viewModel.fetchProfile()
-                }),
-                from: self
-            )
-        }
-
         viewModel.profileObservable.bind { [weak self] profile in
             guard let self = self else { return }
             self.setProfile(profile)
+            self.showLoader(false)
         }
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         profileDescriptionExpand(false)
-        viewModel.syncProfile()
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        viewModel.setNewProfile(with: Profile())
+        showLoader(true)
+        viewModel.fetchProfile()
     }
 
     private func setupView() {
@@ -177,6 +155,15 @@ final class ProfileViewController: UIViewController {
         ])
     }
 
+    private func showLoader(_ isShow: Bool) {
+        switch isShow {
+        case true:
+            UIBlockingProgressHUD.show()
+        case false:
+            UIBlockingProgressHUD.dismiss()
+        }
+    }
+
     private func setProfile(_ profile: Profile) {
         let url = URL(string: profile.avatar)
         profileImage.kf.indicatorType = .activity
@@ -197,18 +184,19 @@ final class ProfileViewController: UIViewController {
 
     @objc
     private func editButtonTapped() {
-        let profile = ProfileEdited(from: viewModel.profile)
+        let profile = ProfileEdited(name: profileName.text ?? "",
+                                    description: profileDescription.text ?? "",
+                                    website: profileWebsite.text ?? "")
         let vc = ProfileEditViewController(ProfileEditViewModel(profile), profileImage.image)
         vc.completionHandler = { [weak self] profile in
             guard let self = self else { return }
-            self.viewModel.setNewProfile(with: profile)
-            self.viewModel.setProfile(with: profile)
+            self.setProfile(profile)
         }
         present(vc, animated: true)
     }
 
     @objc
-    private func textTapped() {
+    func textTapped() {
         if profileDescription.numberOfLines == 0 {
             profileDescriptionExpand(false)
         } else {
@@ -244,9 +232,9 @@ extension ProfileViewController: UITableViewDataSource {
 
         switch indexPath.row {
         case 0:
-            cell.setLabelText(.ProfileTable.myNFTs + " (\(nfts))")
+            cell.setLabelText(.ProfileTable.myNFTs + "(\(nfts))")
         case 1:
-            cell.setLabelText(.ProfileTable.myLikes + " (\(likes))")
+            cell.setLabelText(.ProfileTable.myLikes + "(\(likes))")
         case 2:
             cell.setLabelText(.ProfileTable.about)
         default:
@@ -265,24 +253,9 @@ extension ProfileViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            let vm = ProfileNFTViewModel(viewModel.profile)
-            let vc = ProfileNFTViewController(vm)
-            vc.completionHandler = { [weak self] profile in
-                guard let self = self else { return }
-                self.viewModel.setNewProfile(with: profile)
-            }
-            vc.hidesBottomBarWhenPushed = true
-            navigationController?.pushViewController(vc, animated: true)
+            break
         case 1:
-            let vm = ProfileFavoriteNFTViewModel(viewModel.profile)
-            let vc = ProfileFavoriteNFTViewController(vm)
-            vc.completionHandler = { [weak self] profile in
-                guard let self = self else { return }
-                self.viewModel.setNewProfile(with: profile)
-                self.viewModel.setProfile(with: profile)
-            }
-            vc.hidesBottomBarWhenPushed = true
-            navigationController?.pushViewController(vc, animated: true)
+            break
         case 2:
             guard let url = URL(string: viewModel.profile.website) else { return }
             openWebView(with: url)
