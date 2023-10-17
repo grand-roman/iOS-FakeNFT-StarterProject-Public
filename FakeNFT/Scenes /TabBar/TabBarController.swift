@@ -27,7 +27,7 @@ final class TabBarController: UITabBarController {
             selectedImage: nil
         )
 
-        let catalogVC = UINavigationController(rootViewController: NFTCatalogViewController())
+        let catalogVC = UINavigationController(rootViewController: CatalogViewController())
         catalogVC.tabBarItem = UITabBarItem(
             title: .TabBar.catalog,
             image: .TabBar.catalog,

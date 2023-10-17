@@ -22,7 +22,9 @@ extension UIImage {
     }
 
     enum ProfileTable {
-        static let chevron = UIImage(systemName: "chevron.right")?.withRenderingMode(.alwaysTemplate)
+        static let chevron = UIImage(
+            systemName: "chevron.right"
+        )?.withRenderingMode(.alwaysTemplate)
     }
     
     enum User {
