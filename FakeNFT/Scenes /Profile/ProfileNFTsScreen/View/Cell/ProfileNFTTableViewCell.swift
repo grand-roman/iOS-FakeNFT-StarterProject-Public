@@ -101,7 +101,7 @@ final class ProfileNFTTableViewCell: UITableViewCell, ReuseIdentifying {
             name.text = cellViewModel.name
             addRating(cellViewModel.rating)
             author.text = cellViewModel.author
-            priceNFT.text = cellViewModel.price + .ProfileNFTTableViewCell.currency
+            priceNFT.text = cellViewModel.price
         }
     }
 

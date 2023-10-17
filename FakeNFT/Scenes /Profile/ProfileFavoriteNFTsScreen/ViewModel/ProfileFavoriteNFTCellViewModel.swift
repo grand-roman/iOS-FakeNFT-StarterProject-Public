@@ -13,7 +13,9 @@ struct ProfileFavoriteNFTCellViewModel {
         self.url = URL(string: from.images[0])
         self.name = from.name
         self.rating = from.rating
-        self.price = String(from.price)
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.numberStyle = .currency
+        self.price = currencyFormatter.string(from: from.price as NSNumber)!
         self.id = from.id
     }
 }

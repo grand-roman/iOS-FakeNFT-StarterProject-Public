@@ -66,7 +66,7 @@ final class ProfileFavoriteNFTCollectionViewCell: UICollectionViewCell, ReuseIde
             image.kf.setImage(with: cellViewModel.url)
             name.text = cellViewModel.name
             addRating(cellViewModel.rating)
-            priceNFT.text = cellViewModel.price + .ProfileNFTTableViewCell.currency
+            priceNFT.text = cellViewModel.price
         }
     }
 
