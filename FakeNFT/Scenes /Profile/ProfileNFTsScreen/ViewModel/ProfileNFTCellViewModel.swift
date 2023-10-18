@@ -16,7 +16,6 @@ struct ProfileNFTCellViewModel {
         self.name = from.name
         self.rating = from.rating
         self.author = author
-        let currencyFormatter = NumberFormatter()
         currencyFormatter.numberStyle = .currency
         self.price = currencyFormatter.string(from: from.price as NSNumber)!
         self.isLiked = isLiked
