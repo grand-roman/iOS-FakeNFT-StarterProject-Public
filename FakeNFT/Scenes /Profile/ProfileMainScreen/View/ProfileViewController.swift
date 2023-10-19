@@ -265,9 +265,24 @@ extension ProfileViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            break
+            let vm = ProfileNFTViewModel(viewModel.profile)
+            let vc = ProfileNFTViewController(vm)
+            vc.completionHandler = { [weak self] profile in
+                guard let self = self else { return }
+                self.viewModel.setNewProfile(with: profile)
+            }
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
         case 1:
-            break
+            let vm = ProfileFavoriteNFTViewModel(viewModel.profile)
+            let vc = ProfileFavoriteNFTViewController(vm)
+            vc.completionHandler = { [weak self] profile in
+                guard let self = self else { return }
+                self.viewModel.setNewProfile(with: profile)
+                self.viewModel.setProfile(with: profile)
+            }
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
         case 2:
             guard let url = URL(string: viewModel.profile.website) else { return }
             openWebView(with: url)
