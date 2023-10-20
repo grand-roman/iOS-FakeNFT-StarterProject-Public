@@ -92,6 +92,15 @@
 		A059C3352AE25C38008273D1 /* AlertModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A059C3342AE25C38008273D1 /* AlertModels.swift */; };
 		A059C3372AE25C41008273D1 /* AuthorDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A059C3362AE25C41008273D1 /* AuthorDetailsViewController.swift */; };
 		A059C3392AE25CD5008273D1 /* TabСatalogNetworkRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A059C3382AE25CD5008273D1 /* TabСatalogNetworkRequests.swift */; };
+		A059C33D2AE25DDD008273D1 /* NFTCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A059C33C2AE25DDD008273D1 /* NFTCollectionCell.swift */; };
+		A059C33F2AE25DE1008273D1 /* NFTCollectionViewScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A059C33E2AE25DE1008273D1 /* NFTCollectionViewScreenModel.swift */; };
+		A059C3412AE25DE4008273D1 /* NFTCollectionViewScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A059C3402AE25DE4008273D1 /* NFTCollectionViewScreenViewController.swift */; };
+		A059C3432AE25DE7008273D1 /* NFTCollectionViewScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A059C3422AE25DE7008273D1 /* NFTCollectionViewScreenViewModel.swift */; };
+		A059C3452AE25DEB008273D1 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A059C3442AE25DEB008273D1 /* RatingView.swift */; };
+		A059C3472AE25E02008273D1 /* UserViewScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A059C3462AE25E02008273D1 /* UserViewScreenModel.swift */; };
+		A059C3492AE25E07008273D1 /* UserViewScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A059C3482AE25E07008273D1 /* UserViewScreenViewController.swift */; };
+		A059C34B2AE25E0B008273D1 /* UserViewScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A059C34A2AE25E0B008273D1 /* UserViewScreenViewModel.swift */; };
+		A059C34D2AE25F87008273D1 /* UIProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = A059C34C2AE25F87008273D1 /* UIProgressHUD.swift */; };
 		A0D860602ADDA49D00076ABB /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8605F2ADDA49D00076ABB /* Alert.swift */; };
 /* End PBXBuildFile section */
 
@@ -203,6 +212,15 @@
 		A059C3342AE25C38008273D1 /* AlertModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertModels.swift; sourceTree = "<group>"; };
 		A059C3362AE25C41008273D1 /* AuthorDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorDetailsViewController.swift; sourceTree = "<group>"; };
 		A059C3382AE25CD5008273D1 /* TabСatalogNetworkRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TabСatalogNetworkRequests.swift"; sourceTree = "<group>"; };
+		A059C33C2AE25DDD008273D1 /* NFTCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFTCollectionCell.swift; sourceTree = "<group>"; };
+		A059C33E2AE25DE1008273D1 /* NFTCollectionViewScreenModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFTCollectionViewScreenModel.swift; sourceTree = "<group>"; };
+		A059C3402AE25DE4008273D1 /* NFTCollectionViewScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFTCollectionViewScreenViewController.swift; sourceTree = "<group>"; };
+		A059C3422AE25DE7008273D1 /* NFTCollectionViewScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFTCollectionViewScreenViewModel.swift; sourceTree = "<group>"; };
+		A059C3442AE25DEB008273D1 /* RatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		A059C3462AE25E02008273D1 /* UserViewScreenModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewScreenModel.swift; sourceTree = "<group>"; };
+		A059C3482AE25E07008273D1 /* UserViewScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewScreenViewController.swift; sourceTree = "<group>"; };
+		A059C34A2AE25E0B008273D1 /* UserViewScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewScreenViewModel.swift; sourceTree = "<group>"; };
+		A059C34C2AE25F87008273D1 /* UIProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIProgressHUD.swift; sourceTree = "<group>"; };
 		A0D8605F2ADDA49D00076ABB /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -349,6 +367,7 @@
 				3F6806CF29CBBDB100B4F915 /* NetworkClient */,
 				3F6806D629CBC50A00B4F915 /* CellsReusingUtils.swift */,
 				A01A3E202AD9D6FE00596241 /* Constants.swift */,
+				A059C34C2AE25F87008273D1 /* UIProgressHUD.swift */,
 				A01A3DE82AD98CB400596241 /* Observable.swift */,
 				3FC8C39229D246BA0081F015 /* DateFormatters+Presets.swift */,
 			);
@@ -537,6 +556,8 @@
 		A01A3DED2AD98D9D00596241 /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
+				A059C33B2AE25DD0008273D1 /* NFTCollectionViewScreen */,
+				A059C33A2AE25DC3008273D1 /* UserViewScreen */,
 				A01A3E152AD9D2A900596241 /* UsersList */,
 			);
 			path = Statistics;
@@ -810,6 +831,28 @@
 			path = AuthorDetails;
 			sourceTree = "<group>";
 		};
+		A059C33A2AE25DC3008273D1 /* UserViewScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A059C3482AE25E07008273D1 /* UserViewScreenViewController.swift */,
+				A059C34A2AE25E0B008273D1 /* UserViewScreenViewModel.swift */,
+				A059C3462AE25E02008273D1 /* UserViewScreenModel.swift */,
+			);
+			path = UserViewScreen;
+			sourceTree = "<group>";
+		};
+		A059C33B2AE25DD0008273D1 /* NFTCollectionViewScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A059C33C2AE25DDD008273D1 /* NFTCollectionCell.swift */,
+				A059C33E2AE25DE1008273D1 /* NFTCollectionViewScreenModel.swift */,
+				A059C3402AE25DE4008273D1 /* NFTCollectionViewScreenViewController.swift */,
+				A059C3422AE25DE7008273D1 /* NFTCollectionViewScreenViewModel.swift */,
+				A059C3442AE25DEB008273D1 /* RatingView.swift */,
+			);
+			path = NFTCollectionViewScreen;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -989,6 +1032,7 @@
 				A0011F782ADE47D3007D60F6 /* ProfileNFT.swift in Sources */,
 				A01A3E342AD9D7EF00596241 /* DeleteView.swift in Sources */,
 				3F478ED129DB476500F6D39E /* Fonts.swift in Sources */,
+				A059C34D2AE25F87008273D1 /* UIProgressHUD.swift in Sources */,
 				A01A3DFD2AD98E5700596241 /* ProfileEdited.swift in Sources */,
 				A059C3292AE25BF3008273D1 /* NFTCatalogViewController.swift in Sources */,
 				A01A3E252AD9D73200596241 /* NFTCartManager.swift in Sources */,
@@ -998,6 +1042,7 @@
 				A0011F7E2ADE47EA007D60F6 /* ProfileNFTViewModel.swift in Sources */,
 				A01A3DDF2AD98B2700596241 /* UIViewController+hideKeyboard.swift in Sources */,
 				A01A3DDD2AD98B2300596241 /* UIBlockingProgressHUD.swift in Sources */,
+				A059C3452AE25DEB008273D1 /* RatingView.swift in Sources */,
 				3FC8C39329D246BA0081F015 /* DateFormatters+Presets.swift in Sources */,
 				A01A3E1B2AD9D2C300596241 /* StatisticsListViewModel.swift in Sources */,
 				3F68069B29CBBAF100B4F915 /* ProductDetailsTableViewController.swift in Sources */,
@@ -1011,7 +1056,10 @@
 				A059C3232AE25BC7008273D1 /* NFTCollectionViewController.swift in Sources */,
 				3F68069729CBBAF100B4F915 /* AppDelegate.swift in Sources */,
 				A01A3E192AD9D2BE00596241 /* StatisticsListViewController.swift in Sources */,
+				A059C33F2AE25DE1008273D1 /* NFTCollectionViewScreenModel.swift in Sources */,
+				A059C3492AE25E07008273D1 /* UserViewScreenViewController.swift in Sources */,
 				A01A3DE92AD98CB400596241 /* Observable.swift in Sources */,
+				A059C3412AE25DE4008273D1 /* NFTCollectionViewScreenViewController.swift in Sources */,
 				A01A3E0E2AD9D1C000596241 /* Common.swift in Sources */,
 				A059C3372AE25C41008273D1 /* AuthorDetailsViewController.swift in Sources */,
 				A0011F7C2ADE47E3007D60F6 /* ProfileNFTTableViewCell.swift in Sources */,
@@ -1024,11 +1072,15 @@
 				A01A3E052AD98EC100596241 /* Profile.swift in Sources */,
 				A01A3E172AD9D2B600596241 /* StatisticsListModel.swift in Sources */,
 				A01A3DE72AD98C7400596241 /* ProfileRequests.swift in Sources */,
+				A059C34B2AE25E0B008273D1 /* UserViewScreenViewModel.swift in Sources */,
+				A059C3472AE25E02008273D1 /* UserViewScreenModel.swift in Sources */,
 				A01A3E2E2AD9D7C000596241 /* CartViewModel.swift in Sources */,
+				A059C33D2AE25DDD008273D1 /* NFTCollectionCell.swift in Sources */,
 				3F6806D729CBC50A00B4F915 /* CellsReusingUtils.swift in Sources */,
 				A01A3E422AD9D86400596241 /* AgreementViewController.swift in Sources */,
 				A01A3DE52AD98C6900596241 /* ProfileService.swift in Sources */,
 				A059C32F2AE25C08008273D1 /* SortTypeStorage.swift in Sources */,
+				A059C3432AE25DE7008273D1 /* NFTCollectionViewScreenViewModel.swift in Sources */,
 				A059C3252AE25BD3008273D1 /* NFTCollectionViewModel.swift in Sources */,
 				A059C3212AE25BC3008273D1 /* NFTCollectionViewCell.swift in Sources */,
 				A01A3E102AD9D1C500596241 /* Config.swift in Sources */,
