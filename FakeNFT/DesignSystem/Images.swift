@@ -10,7 +10,12 @@ extension UIImage {
 
     enum NFTCard {
         static let heart = UIImage(named: "Heart")
+        static let heart_filled = UIImage(named: "heart_filled")
+        static let add_cart = UIImage(named: "add-to-card")
+        static let remove_cart = UIImage(named: "remove-from-cart")
         static let star = UIImage(named: "Star")
+        static let inCart = UIImage(named: "InCart")
+        static let notInCart = UIImage(named: "NotInCart")
     }
 
     enum NavigationBar {
@@ -22,9 +27,7 @@ extension UIImage {
     }
 
     enum ProfileTable {
-        static let chevron = UIImage(
-            systemName: "chevron.right"
-        )?.withRenderingMode(.alwaysTemplate)
+        static let chevron = UIImage(systemName: "chevron.right")?.withRenderingMode(.alwaysTemplate)
     }
     
     enum User {
