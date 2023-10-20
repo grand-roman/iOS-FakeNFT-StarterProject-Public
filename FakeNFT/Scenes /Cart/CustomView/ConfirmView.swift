@@ -1,9 +1,9 @@
 import UIKit
 
 final class ConfirmView: UIView {
-    
+
     weak var delegate: CartPurchaseDelegate?
-    
+
     private let agreementLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.Regular.size13
@@ -32,11 +32,12 @@ final class ConfirmView: UIView {
         button.layer.cornerRadius = 16
         button.layer.backgroundColor = UIColor.black.cgColor
         button.addTarget(self,
-                         action: #selector(confirmButtonTapped),
-                         for: .touchUpInside)
+            action: #selector(confirmButtonTapped),
+            for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = UIColor(red: 0.969, green: 0.969, blue: 0.973, alpha: 1)
@@ -64,18 +65,23 @@ final class ConfirmView: UIView {
             linkAgreementButton.leadingAnchor.constraint(equalTo: agreementLabel.leadingAnchor),
             linkAgreementButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -126),
 
+
+            linkAgreementButton.topAnchor.constraint(equalTo: agreementLabel.bottomAnchor),
+            linkAgreementButton.leadingAnchor.constraint(equalTo: agreementLabel.leadingAnchor),
+            linkAgreementButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -126),
+
             confirmPurchaseButton.topAnchor.constraint(equalTo: linkAgreementButton.bottomAnchor, constant: 16),
             confirmPurchaseButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             confirmPurchaseButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50),
             confirmPurchaseButton.trailingAnchor.constraint(
                 equalTo: trailingAnchor, constant: -12)
-        ])
+            ])
     }
 
     @objc func confirmButtonTapped() {
-        // TODO: Transition on confirm page
+        delegate?.didTappedConfirmButton()
     }
-    
+
     @objc func agreementLinkTapped() {
         delegate?.didTappedAgreementLink()
     }
