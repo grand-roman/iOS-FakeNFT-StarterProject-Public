@@ -1,5 +1,11 @@
 # ТЗ мобильного приложения FakeNFT
 
+## Архитектура MVVM
+## Верстка в коде
+
+# Демонстрация проекта
+https://disk.yandex.ru/i/HYksCEGztxHEQg
+
 # Ссылки
 
 [Дизайн Figma](https://www.figma.com/file/k1LcgXHGTHIeiCv4XuPbND/FakeNFT-(YP)?node-id=96-5542&t=YdNbOI8EcqdYmDeg-0)

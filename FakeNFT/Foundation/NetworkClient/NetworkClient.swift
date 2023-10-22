@@ -9,13 +9,17 @@ enum NetworkClientError: Error {
 
 protocol NetworkClient {
     @discardableResult
-    func send(request: NetworkRequest,
-              onResponse: @escaping (Result<Data, Error>) -> Void) -> NetworkTask?
+    func send(
+        request: NetworkRequest,
+        onResponse: @escaping (Result<Data, Error>) -> Void
+    ) -> NetworkTask?
 
     @discardableResult
-    func send<T: Decodable>(request: NetworkRequest,
-                            type: T.Type,
-                            onResponse: @escaping (Result<T, Error>) -> Void) -> NetworkTask?
+    func send<T: Decodable>(
+        request: NetworkRequest,
+        type: T.Type,
+        onResponse: @escaping (Result<T, Error>) -> Void
+    ) -> NetworkTask?
 }
 
 struct DefaultNetworkClient: NetworkClient {
@@ -64,7 +68,11 @@ struct DefaultNetworkClient: NetworkClient {
     }
 
     @discardableResult
-    func send<T: Decodable>(request: NetworkRequest, type: T.Type, onResponse: @escaping (Result<T, Error>) -> Void) -> NetworkTask? {
+    func send<T: Decodable>(
+        request: NetworkRequest,
+        type: T.Type,
+        onResponse: @escaping (Result<T, Error>) -> Void
+    ) -> NetworkTask? {
         return send(request: request) { result in
             switch result {
             case let .success(data):
